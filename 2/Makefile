@@ -7,6 +7,9 @@ CC = javac
 INT = java
 SOURCES := *.java
 CLASSDIR := cls
+OPTS = -Xlint:deprecation
+CLASS := Robot
+INPUT := sample.txt
 .PHONY: clean
 
 all:
@@ -14,13 +17,13 @@ all:
 
 build:
 
-	$(CC) -d $(CLASSDIR) $(SOURCES) -Xlint:unchecked
+	$(CC) -d $(CLASSDIR) $(SOURCES) $(OPTS)
 
 prod:
 	$(CC) $(CLASSDIR) $(SOURCES)
 
 run:
-	$(INT) -classpath $(CLASSDIR) Robot
+	$(INT) -classpath $(CLASSDIR) $(CLASS) $(INPUT)
  
 clean:
 	rm -f $(CLASSDIR)/*.class
