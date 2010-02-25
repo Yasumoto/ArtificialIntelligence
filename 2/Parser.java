@@ -5,6 +5,7 @@ public class Parser {
 	private char[][] arr;
 	private int[] initialPosition;
 	private int[] goalPosition;
+	private int arraySize;
 
 	public Parser(String fileName){
 		try {
@@ -25,8 +26,7 @@ public class Parser {
 	
 	private void createGrid() {
 		try {
-			int arraySize = (int)data.read() - '0';
-			int count = 0;
+			arraySize = (int)data.read() - '0';
 			initialPosition = new int[2];
 			goalPosition = new int[2];
 			System.out.println("The size of the array will be: " + arraySize);
@@ -54,14 +54,7 @@ public class Parser {
 				data.read();
 			}
 
-			// Used for Grid Reading validation
-			for(int i = 0; i < arraySize; ++i){
-				for (int j = 0; j < arraySize; ++j){
-					System.out.print(arr[i][j]);
-				}
-				System.out.println();
-			}
-
+			gridPrint(arr, arraySize);
 		}
 		
                 catch (IOException e) {
@@ -69,5 +62,31 @@ public class Parser {
 			e.printStackTrace();
                 }
 
+	}
+
+	public char[][] getGrid(){
+		return arr;
+	}
+
+	public int[] getInitial(){
+		return initialPosition;
+	}
+
+	public int[] getGoal(){
+		return goalPosition;
+	}
+
+	public int getArraySize(){
+		return arraySize;
+	}
+
+	public void gridPrint(char[][] arr, int arraySize){
+		// Used for Grid Reading validation
+		for(int i = 0; i < arraySize; ++i){
+			for (int j = 0; j < arraySize; ++j){
+				System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
 	}
 }

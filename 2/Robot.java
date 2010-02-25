@@ -6,5 +6,8 @@ public class Robot{
 		}
 		
 		Parser parseShiz = new Parser(args[0]);
+
+		Fringe theFringe = new Fringe(parseShiz);
+
 	}
 }

@@ -7,7 +7,7 @@ CC = javac
 INT = java
 SOURCES := *.java
 CLASSDIR := cls
-OPTS = -Xlint:deprecation
+OPTS = -Xlint:deprecation -Xlint:unchecked
 CLASS := Robot
 INPUT := sample.txt
 .PHONY: clean
