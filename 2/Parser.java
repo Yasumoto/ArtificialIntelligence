@@ -12,8 +12,8 @@ public class Parser {
 			data = new BufferedReader(new FileReader(fileName));
 
 			createGrid();
-			System.out.println("The Initial Position should be at: (" + initialPosition[0] + ", " + initialPosition[1] + ")");
-			System.out.println("The Goal Position should be at: (" + goalPosition[0] + ", " + goalPosition[1] + ")");
+			//System.out.println("The Initial Position should be at: (" + initialPosition[0] + ", " + initialPosition[1] + ")");
+			//System.out.println("The Goal Position should be at: (" + goalPosition[0] + ", " + goalPosition[1] + ")");
 
 			data.close();
                 }
@@ -29,7 +29,7 @@ public class Parser {
 			arraySize = (int)data.read() - '0';
 			initialPosition = new int[2];
 			goalPosition = new int[2];
-			System.out.println("The size of the array will be: " + arraySize);
+			//System.out.println("The size of the array will be: " + arraySize);
 			arr = new char[arraySize][arraySize];
 
 			//Clear the newline from the size of Array.
@@ -54,7 +54,7 @@ public class Parser {
 				data.read();
 			}
 
-			gridPrint(arr, arraySize);
+			//gridPrint(arr, arraySize);
 		}
 		
                 catch (IOException e) {

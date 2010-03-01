@@ -10,6 +10,8 @@ public class Node implements Comparable<Node> {
 	// How much further do we need to go?
 	private float distance;
 
+	public int pathLength;
+
 
 	public Node(char theData, int[] theLocation, Node theParent) {
 		data = theData;
@@ -18,9 +20,11 @@ public class Node implements Comparable<Node> {
 
 		if (theParent != null){
 			stepsFromInitial = theParent.getStepsFromInitial() + 1;
+			pathLength = theParent.pathLength + 1;
 		}
 		else {
 			stepsFromInitial = 0;
+			pathLength = 0;
 		}
 	}
 

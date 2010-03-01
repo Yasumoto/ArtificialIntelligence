@@ -9,10 +9,17 @@ public class Robot{
 
 		Graph graph;
 
+		System.out.println("Euclidean Distance!");
 		graph = new Graph(parseShiz, 0);
-		// graph = new Graph(parseShiz, 1);
-		// graph = new Graph(parseShiz, 2);
-		// graph = new Graph(parseShiz, 3);
+
+		System.out.println("Manhattan Distance!");
+		graph = new Graph(parseShiz, 1);
+
+		System.out.println("Cost + Euclidean Distance!");
+		graph = new Graph(parseShiz, 2);
+
+		System.out.println("Cost + Manhattan Distance!");
+		graph = new Graph(parseShiz, 3);
 
 	}
 }
