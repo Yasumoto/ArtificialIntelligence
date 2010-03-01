@@ -13,7 +13,7 @@ INPUT := sample.txt
 .PHONY: clean
 
 all:
-	make build && make run
+	make clean && make build && make run
 
 build:
 

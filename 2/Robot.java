@@ -7,7 +7,12 @@ public class Robot{
 		
 		Parser parseShiz = new Parser(args[0]);
 
-		Fringe theFringe = new Fringe(parseShiz);
+		Graph graph;
+
+		graph = new Graph(parseShiz, 0);
+		// graph = new Graph(parseShiz, 1);
+		// graph = new Graph(parseShiz, 2);
+		// graph = new Graph(parseShiz, 3);
 
 	}
 }

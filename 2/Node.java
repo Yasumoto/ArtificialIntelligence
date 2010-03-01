@@ -1,4 +1,4 @@
-public class Node{
+public class Node implements Comparable<Node> {
 	// What type of node is it?
 	private char data;
 	// What coordinates is this node at?
@@ -8,9 +8,7 @@ public class Node{
 	// How far away have we come?
 	private int stepsFromInitial;
 	// How much further do we need to go?
-	private int manhattanDistance;
-	// For some of us, this isn't very far...
-	private int straightDistance;
+	private float distance;
 
 
 	public Node(char theData, int[] theLocation, Node theParent) {
@@ -46,19 +44,24 @@ public class Node{
 		stepsFromInitial = theSteps;
 	}
 
-	public int getManhattanDistance() {
-		return manhattanDistance;
+	public float getDistance() {
+		return distance;
 	}
 
-	public void setManhattanDistance(int theDistance) {
-		manhattanDistance = theDistance;
+	public void setDistance(float theDistance) {
+		distance = theDistance;
 	}
 
-	public int getStraightDistance() {
-		return straightDistance;
-	}
+	public int compareTo(Node other) {
+        	if (distance < other.getDistance()) {
+			return -1;
+		}
+        	else if (distance > other.getDistance()) {
+			return 1;
+		}
+        	else {
+			return 0;
+		}
 
-	public void setStraightDistance(int theDistance) {
-		straightDistance = theDistance;
 	}
 }
